@@ -1,0 +1,79 @@
+$primary-color: #333399;
+$secondary-color: #ffd000;
+$background-color: lighten($primary-color, 55%);
+$black: rgb(28, 38, 39);
+$dark-color: darken($primary-color, 20%);
+$light-color: lighten($primary-color, 20%);
+// $white: rgb(213, 221, 223);
+$white: #fff;
+$danger-color: #dc3545;
+$success-color: #28a745;
+//$black: #333;
+//$white: #fff;
+$show-home-image: true;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.7;
+$max-width: 1100px;
+
+$header-font: "Work Sans", sans-serif;
+$body-font: "Lato", sans-serif;
+
+@mixin centered {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+@mixin easeOut {
+  transition: all 0.2s ease-out;
+}
+
+// Set background and text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $black;
+  } @else {
+    @return $white;
+  }
+}
+
+// Margin & padding
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  // All around margin
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  // Vertical margin
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  // Horizontal margin
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+
+  // All around padding
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  // Vertical margin
+  .mp-#{$space} {
+    padding: #{$space}rem 0;
+  }
+
+  // Horizontal margin
+  .mp-#{$space} {
+    padding: 0 #{$space};
+  }
+}
