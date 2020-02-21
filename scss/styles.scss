@@ -2,6 +2,9 @@
 @import "utilities";
 @import "form";
 
+@import "fa/fontawesome.scss";
+@import "fa/solid.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,32 +45,59 @@ img {
 
 // Navbar
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0.7rem 2rem;
   position: fixed;
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 3px $secondary-color;
-  @include set-background(rgba($dark-color, 0.9));
 
-  ul {
+  &-top {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.7rem 2rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+
+    .nav-logo {
+      img {
+        height: 2rem;
+        width: auto;
+      }
+    }
   }
 
-  a {
-    color: $white;
-    padding: 0.45rem;
-    margin: 0 0.25rem;
-    // @include easeOut;
-    &:hover {
-      // color: $primary-color;
-      cursor: pointer;
-      // text-decoration: underline;
-      border-bottom: 3px solid $light-color;
-      transition: all 0.2s ease;
+  &-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    bottom: 0;
+    border-bottom: solid 3px $secondary-color;
+    @include set-background(rgba($dark-color, 0.9));
+
+    ul {
+      display: flex;
+    }
+
+    a {
+      color: $white;
+      padding: 0.45rem;
+      margin: 0 0.25rem;
+      // @include easeOut;
+      &:hover {
+        // color: $primary-color;
+        //cursor: pointer;
+        // text-decoration: underline;
+        border-bottom: 3px solid $light-color;
+        transition: all 0.2s ease;
+      }
     }
   }
 }
