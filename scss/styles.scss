@@ -234,12 +234,18 @@ i {
 .content {
   // display: flex;
   .content-dual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-gap: 2rem;
     .content-left {
       margin-top: 2rem;
       padding: 2rem;
+      width: 50%;
+    }
+    .content-right {
+      width: 50%;
     }
   }
 
