@@ -1,0 +1,48 @@
+.show-md {
+  display: none;
+}
+.show-sm {
+  display: none;
+}
+
+// Widescreens
+@include mediaXl {
+  $primary-color: #333399;
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  $primary-color: #339699;
+  .hide-lg {
+    display: none;
+  }
+}
+
+// Tablets & small laptops
+@include mediaMd {
+  $primary-color: #479933;
+  .hide-md {
+    display: none;
+  }
+  .navbar {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    &-links {
+      padding: 0;
+    }
+  }
+  .landing {
+    overflow: auto;
+  }
+  .landing-main {
+    flex-direction: column;
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  $primary-color: #998133;
+  .hide-sm {
+    display: none;
+  }
+}
