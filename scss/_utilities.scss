@@ -7,6 +7,21 @@
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
+.iframe-container {
+  overflow: hidden;
+  // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
 // Text styles
 .x-large {
@@ -227,5 +242,40 @@
 
   th {
     background: $light-color;
+  }
+}
+
+.tab-nav {
+  padding: 1rem;
+  .tab-links {
+    display: flex;
+    width: 100%;
+
+    .tab-link {
+      margin: 0.1rem 0.5rem;
+      padding: 0.5rem;
+      @include set-background($primary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      @include easeOut;
+      &:hover {
+        @include set-background(lighten($primary-color, 10%));
+      }
+    }
+    .selected {
+      color: $secondary-color;
+      @include easeOut;
+      &:hover {
+        color: lighten($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+.tabs {
+  .tab {
+    &-closed {
+      display: none;
+    }
   }
 }

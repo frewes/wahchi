@@ -105,8 +105,12 @@ i {
       margin: 0 0.25rem;
       margin-bottom: 3px;
       text-align: center;
+      font-weight: bold;
       &.selected {
         border-bottom: 3px solid $secondary-color;
+      }
+      &.focus {
+        // color: $secondary-color;
       }
 
       // @include easeOut;
@@ -202,6 +206,16 @@ i {
 
 .content {
   // display: flex;
+  .content-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    .content-left {
+      margin-top: 2rem;
+      padding: 2rem;
+    }
+  }
+
   p {
     padding-bottom: 1rem;
   }
@@ -216,6 +230,35 @@ i {
     margin: 0 2rem 1rem 2rem;
     // border: #ddd 6px solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+
+  a:hover {
+    color: $light-color;
+    @include easeOut;
+  }
+}
+
+.faqs {
+  margin-top: 2rem;
+  .faq {
+    margin-bottom: 3rem;
+    .faq-question {
+      padding: 0.1rem 0.5rem;
+      color: $primary-color;
+      font-style: italic;
+      font-weight: bold;
+      // @include set-background($primary-color);
+      border-top: 2px solid $primary-color;
+    }
+    .faq-answer {
+      padding-left: 1rem;
+    }
   }
 }
 
