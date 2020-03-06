@@ -56,7 +56,8 @@ i {
   width: 100%;
   top: 0;
   height: 10vh;
-
+  // padding: 2rem 2rem;
+  // border: 1px $primary-color solid;
   &-top {
     display: flex;
     align-items: center;
@@ -70,8 +71,9 @@ i {
   }
 
   &-links {
+    padding: 2rem;
     display: flex;
-    align-items: center;
+    align-items: right;
     justify-content: space-between;
     // padding: 0.7rem 2rem;
     position: relative;
@@ -79,8 +81,8 @@ i {
     width: 100%;
     height: 100%;
     bottom: 0;
-    border-bottom: solid 0.25vh $secondary-color;
-    @include set-background(rgba($dark-color, 0.9));
+    // border-bottom: solid 0.25vh $primary-color;
+    // @include set-background($dark-color);
 
     ul {
       display: flex;
@@ -98,10 +100,15 @@ i {
     }
 
     .nav-link {
-      color: $white;
+      color: $primary-color;
       padding: 0.45rem;
       margin: 0 0.25rem;
       margin-bottom: 3px;
+      text-align: center;
+      &.selected {
+        border-bottom: 3px solid $secondary-color;
+      }
+
       // @include easeOut;
       &:hover {
         // color: $primary-color;
@@ -113,70 +120,79 @@ i {
       }
     }
     .nav-phone {
-      color: $white;
+      color: $primary-color;
       padding: 0.45rem;
       margin: 0 0.25rem;
       margin-bottom: 3px;
       right: 0;
       padding-left: 1rem;
-      border-left: 3px solid $white;
+      border-left: 3px solid $primary-color;
       cursor: default;
     }
   }
-}
-.link-logo {
-  img {
-    height: 5vh;
-    @include centered;
+  .link-logo {
+    margin: 1rem;
+    img {
+      height: 8vh;
+      // height: 80%;
+      @include centered;
+    }
   }
 }
 
 // Landing
 .landing {
   position: relative;
-  background: url("../img/practise-photo.jpg") no-repeat center center/cover;
-  height: 90vh;
+  // background: url("../img/practise-photo.jpg") no-repeat center center/cover;
+  height: 65vh;
   overflow: hidden;
   // height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  margin: 0 2rem;
 
   &-header {
+    grid-column: span 2;
     padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
+    @include centered;
     // width: 90%;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin: 1rem;
     @include set-background(rgba($background-color, 0.8));
   }
 
-  &-inner {
-    padding: 0.5rem 1rem;
-    //color: $black;
-    height: 100%;
+  &-content {
+    margin-left: 4rem;
+    @include centered;
     display: flex;
     flex-direction: column;
-    width: 30%;
-    margin: 2rem;
-    // margin-left: 1rem;
-    // margin-top: 2rem;
-    // @include set-background(rgba($background-color, 0.8));
+    vertical-align: middle;
+  }
 
-    // @include centered;
-
-    .item {
-      margin-bottom: 1rem;
+  &-image {
+    @include centered;
+    display: flex;
+    vertical-align: middle;
+    .border {
+      display: grid;
       @include centered;
-      @include set-background(rgba($background-color, 0.8));
-      &-header {
-        @include set-background(rgba($primary-color, 0.8));
-      }
-
-      &-body {
-        padding: 0.5rem 0;
+      height: 80%;
+      // padding-top: 2rem;
+      img {
+        float: left;
+        display: block;
+        border: 4px $primary-color solid;
+        width: auto;
+        // border-radius: 2rem;
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
     }
   }
+
   .buttons {
     .btn {
       width: 10rem;
@@ -184,169 +200,22 @@ i {
   }
 }
 
-// About Page
-.about-grid {
-  display: grid;
-  grid-template-areas:
-    "top top"
-    "about about";
-  grid-gap: 1rem;
-
-  .profile-top {
-    grid-area: top;
-    display: flex;
-    flex-direction: column;
-    @include centered;
-
-    img {
-      width: 250px;
-    }
-
-    .icons a {
-      color: $white;
-      margin: 0 0.3rem;
-      transition: 0.2s ease-in;
-
-      &:hover {
-        color: $dark-color;
-      }
-    }
-  }
-  .about {
-    grid-area: about;
-    text-align: center;
-
-    .skills {
-      display: flex;
-      @include centered;
-    }
-  }
-}
-
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    "bioimage bio bio"
-    "box1 box2 box3";
-  grid-template-columns: repeat(3, 1fr);
-
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: $secondary-color 3px solid;
-    width: 200px;
-    height: 200px;
-    padding: 25px;
-    object-fit: cover;
+.content {
+  // display: flex;
+  p {
+    padding-bottom: 1rem;
   }
 
-  .bio {
-    font-size: 1.5rem;
-    grid-area: bio;
+  .lead {
+    font-style: oblique;
   }
 
-  .box-1 {
-    grid-area: box1;
-  }
-  .box-2 {
-    grid-area: box2;
-  }
-  .box-3 {
-    grid-area: box3;
-  }
-
-  .box {
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-  }
-}
-
-.dashboard-top {
-  grid-area: top;
-  display: flex;
-  flex-direction: column;
-  @include centered;
-  padding: 0.5rem;
-  margin: 1rem 0;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-
-  .item {
-    display: flex;
-    flex-direction: column;
-    @include centered;
-    margin: 1rem;
-    .item-header {
-      display: flex;
-      @include centered;
-      width: 100%;
-      height: 100%;
-      margin-bottom: 0.5rem;
-      padding: 0.5rem 0;
-      border-bottom: 1px $secondary-color solid;
-      i {
-        margin-right: 1rem;
-      }
-    }
-
-    .item-btns {
-      width: 100%;
-      a {
-        display: inline-block;
-        width: 100%;
-        padding: 0.5rem 0;
-        &:first-child {
-          @include set-background($light-color);
-          @include easeOut;
-          &:hover {
-            @include set-background(lighten($light-color, 5%));
-          }
-        }
-        &:last-child {
-          @include set-background($dark-color);
-          @include easeOut;
-          &:hover {
-            @include set-background(darken($dark-color, 5%));
-          }
-        }
-      }
-    }
-  }
-}
-
-.experience-grid {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(4, 1fr);
-
-  .experience {
-    border: 1px $secondary-color solid;
-    display: inline-block;
-    flex-direction: column;
-    @include centered;
-    margin: 1rem;
-
-    &:hover {
-      background-color: $light-color;
-      @include easeOut;
-    }
-
-    .header {
-      display: flex;
-      @include centered;
-      @include set-background($dark-color);
-      width: 100%;
-
-      i {
-        width: 33%;
-      }
-    }
+  &-image {
+    float: right;
+    width: 40%;
+    margin: 0 2rem 1rem 2rem;
+    // border: #ddd 6px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
 
@@ -358,27 +227,39 @@ i {
   margin-top: 2rem;
   width: 100%;
   padding: 1rem 3rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   justify-content: space-between;
 
-  background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
+  @include set-background($background-color);
   // height: 60px;
   height: 10vh;
-
+  color: $primary-color;
   .footer-caa {
     @include centered;
+    text-align: right;
     img {
+      color: $primary-color;
       // position: relative;
       height: 5vh;
     }
   }
 
+  .footer-text {
+    a {
+      &:hover {
+        color: $light-color;
+        @include easeOut;
+      }
+    }
+  }
+
   .footer-fb {
+    text-align: left;
     a {
       font-size: 4vh;
-      color: $white;
+      color: $primary-color;
       @include easeOut;
       &:hover {
         color: $light-color;
