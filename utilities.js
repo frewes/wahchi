@@ -1,4 +1,4 @@
-const test = e => {
+const selectTab = e => {
   console.log(e);
   console.log(e.getAttribute("for"));
   const tabLinks = document.getElementsByClassName("tab-link");
@@ -21,3 +21,30 @@ const test = e => {
     }
   });
 };
+
+// Select DOM items
+const menuBtn = document.querySelector(".menu-btn");
+const navbar = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-item");
+// Set initial state of menu
+let showMenu = false;
+
+menuBtn.addEventListener("click", toggleMenu);
+
+function toggleMenu() {
+  if (!showMenu) {
+    menuBtn.classList.add("close");
+    navbar.classList.remove("collapsed");
+    navItems.forEach(item => item.classList.add("show"));
+
+    // Set menu state
+    showMenu = true;
+  } else {
+    menuBtn.classList.remove("close");
+    navbar.classList.add("collapsed");
+    navItems.forEach(item => item.classList.remove("show"));
+
+    // Set menu state
+    showMenu = false;
+  }
+}

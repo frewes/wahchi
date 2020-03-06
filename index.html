@@ -17,21 +17,34 @@
   </head>
   <body>
     <div class="navbar navbar-links">
+      <div class="menu-btn show-sm">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
       <div class="nav-logo">
         <a href="/" class="link-logo">
           <img src="img/logo-old.png" alt="Wahroonga Chiropractic" />
         </a>
       </div>
-      <ul class="nav-links">
-        <li><a class="nav-link focus" href="/book.html">Book now!</a></li>
-        <li>
+      <ul class="nav-links collapsed">
+        <li class="nav-item">
+          <a class="nav-link selected show-sm" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link focus" href="/book.html">Book now!</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/about.html">About us</a>
         </li>
-        <li>
+        <li class="nav-item">
           <a class="nav-link" href="/services.html">Our services</a>
         </li>
-        <li><a class="nav-link" href="/faqs.html">FAQs</a></li>
-        <li><a class="nav-link" href="/contact.html">Contact us</a></li>
+        <li class="nav-item"><a class="nav-link" href="/faqs.html">FAQs</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Contact us</a>
+        </li>
       </ul>
     </div>
 
@@ -59,7 +72,7 @@
         </div>
       </div>
     </div>
-    <footer class="footer hide-sm">
+    <footer class="footer">
       <div id="main-footer">
         <div class="footer-fb">
           <a href="facebook.com/wahroongachiropractic">
@@ -82,5 +95,6 @@
         </div>
       </div>
     </footer>
+    <script src="utilities.js"></script>
   </body>
 </html>
