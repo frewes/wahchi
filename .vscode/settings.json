@@ -7,7 +7,7 @@
     {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "css/"
+      "savePath": "public/css/"
     }
   ]
 }

@@ -1,5 +1,5 @@
 .show-sm {
-  visibility: hidden;
+  display: none;
 }
 
 // Widescreens
@@ -20,7 +20,8 @@
   }
   .navbar-links {
     font-size: 0.7rem;
-    padding: 1rem 0.5rem;
+    margin: auto;
+    // padding: 1rem 0.5rem;
     &-links {
       padding: 0;
     }
@@ -62,7 +63,7 @@
   }
   .navbar-links {
     .show-sm {
-      visibility: visible;
+      display: inline;
     }
 
     ul.nav-links {
@@ -113,6 +114,11 @@
       }
     }
   }
+  .container {
+    padding: 0 1rem;
+    margin-top: 0;
+  }
+
   .content {
     .content-dual {
       flex-direction: column;
@@ -123,6 +129,28 @@
       }
       .content-right {
         width: 100%;
+      }
+    }
+    &-image {
+      width: 90%;
+      margin: auto;
+      float: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      @include centered;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .tab-nav {
+    padding: 0.25rem;
+
+    .tab-links {
+      justify-content: space-between;
+      .tab-link {
+        font-size: 0.7rem;
+        margin: 0.1rem;
       }
     }
   }

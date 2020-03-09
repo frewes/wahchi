@@ -250,7 +250,7 @@
   .tab-links {
     display: flex;
     width: 100%;
-
+    overflow: auto;
     .tab-link {
       margin: 0.1rem 0.5rem;
       padding: 0.5rem;
@@ -274,8 +274,10 @@
 
 .tabs {
   .tab {
+    @include easeOut;
     &-closed {
       display: none;
+      @include easeOut;
     }
   }
 }
