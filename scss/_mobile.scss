@@ -26,6 +26,16 @@
       padding: 0;
     }
   }
+  .landing-main {
+    flex-direction: column;
+    .landing-content {
+      width: 80%;
+    }
+    .landing-image {
+      width: 100%;
+    }
+  }
+
   .landing {
     overflow: auto;
   }
@@ -39,6 +49,10 @@
 
 // Smartphones
 @include mediaSm {
+  .landing {
+    padding: 0;
+    padding-bottom: $footer-height;
+  }
   .hide-sm {
     display: none;
   }
