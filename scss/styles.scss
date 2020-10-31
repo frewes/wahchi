@@ -103,8 +103,10 @@ i {
       display: flex;
       margin: 0 0.5rem;
       padding: 0.5rem 0;
+      padding-bottom: 3px;
       &.selected {
         border-bottom: 3px solid $secondary-color;
+        padding-bottom: 0;
       }
       &.focus {
         // color: $secondary-color;
@@ -118,6 +120,7 @@ i {
         // margin-bottom: 0;
         border-bottom: 3px solid $light-color;
         transition: all 0.2s ease;
+        padding-bottom: 0;
       }
     }
 
@@ -218,6 +221,7 @@ i {
         object-fit: cover;
         // border-radius: 2rem;
         height: auto;
+        max-height: 50vh;
         margin: 0;
         padding: 0;
       }
